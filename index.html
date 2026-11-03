@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wishnook · بوث غلا</title>
+<meta name="description" content="هدية تفاعلية لغلا: صوّري بوث الذكريات 📸">
+<meta property="og:title" content="هدية لغلا 📸 | Wishnook · ركن الأمنيات">
+<meta property="og:type" content="website">
+<meta property="og:description" content="هدية تفاعلية صُنعت خصيصًا لك. افتحي الرابط والعبي!">
+<meta property="og:url" content="https://wishnook1.github.io/ghala/">
+<meta property="og:image" content="https://wishnook1.github.io/ghala/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Wishnook · ركن الأمنيات">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://wishnook1.github.io/ghala/og.png">
+<meta name="theme-color" content="#ffd6e3">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;800&family=DotGothic16&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#43355f;--sky:#a9d8ff;--lilac:#c9b6f2;--blush:#ffd6e3;--straw:#ff8fb1;--mint:#bdebd3;--cream:#fff8f0;--butter:#ffe9a8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--cream);font-family:'Baloo Bhaijaan 2','DotGothic16',sans-serif;color:var(--ink)}
+body{min-height:100vh;display:flex;justify-content:center;padding:10px;background-image:radial-gradient(#f3c4d6 1.5px,transparent 1.5px);background-size:16px 16px}
+#cover{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;background:linear-gradient(165deg,#a9d8ff,#c9b6f2 50%,#ffd6e3);transition:opacity .6s,transform .6s;overflow:hidden}
+#cover.out{opacity:0;transform:scale(1.15);pointer-events:none}
+#cover h1{font:56px 'DotGothic16';margin:0;color:#fff;text-shadow:3px 3px 0 var(--ink),-1px -1px 0 var(--ink),3px -1px 0 var(--ink),-1px 3px 0 var(--ink)}
+#cover h2{font:800 26px 'Baloo Bhaijaan 2';margin:6px 0 2px}
+#cover p{font:500 17px 'Baloo Bhaijaan 2';margin:4px 0 22px}
+#cover .tag{background:var(--cream);border:3px solid var(--ink);border-radius:20px;padding:4px 16px;font:800 18px 'Baloo Bhaijaan 2';box-shadow:3px 3px 0 var(--ink);margin-bottom:18px}
+.fl{position:absolute;font-size:26px;animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-22px) rotate(12deg)}}
+#win{position:relative;width:100%;max-width:440px;background:var(--cream);border:4px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);overflow:hidden;align-self:flex-start}
+#bar{display:flex;justify-content:space-between;align-items:center;background:var(--sky);padding:6px 12px;direction:ltr;font:14px 'DotGothic16',sans-serif;border-bottom:4px solid var(--ink)}
+canvas{display:block;width:100%;image-rendering:pixelated;touch-action:none}
+#btns{display:flex;gap:6px;padding:8px 8px 0;background:var(--butter);border-top:4px solid var(--ink);flex-wrap:wrap;justify-content:center}
+#btns .b{margin:0 0 6px;padding:3px 10px;font-size:20px}
+#btns .b.s{background:var(--mint);outline:3px solid var(--straw)}
+#msg{background:var(--butter);padding:6px 14px 10px;font:500 15px/1.6 'Baloo Bhaijaan 2';min-height:46px}
+#dlg{position:absolute;inset:48px 10px 10px;background:var(--cream);border:4px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink);padding:18px 14px 14px;overflow:auto;z-index:5;background-image:radial-gradient(#f3c4d6 1.2px,transparent 1.2px);background-size:14px 14px}
+#dlg[hidden]{display:none}
+#dlg:before{content:"";position:absolute;top:-10px;left:50%;width:90px;height:18px;margin-left:-45px;background:var(--butter);transform:rotate(-2deg);border:2px solid var(--ink)}
+.pill{display:inline-block;border:3px solid var(--ink);border-radius:20px;padding:2px 14px;font:800 18px 'Baloo Bhaijaan 2';background:var(--lilac)}
+p{font:500 16px/1.7 'Baloo Bhaijaan 2';margin:6px 0}
+.b{background:var(--straw);color:var(--ink);border:3px solid var(--ink);border-radius:14px;box-shadow:3px 3px 0 var(--ink);font:800 16px 'Baloo Bhaijaan 2';padding:5px 16px;margin:8px 0 0 6px}
+.b:active{transform:translate(3px,3px);box-shadow:none}
+.f{width:42px;height:42px;border-radius:50%;margin:4px;padding:0;box-shadow:none}
+.f.s{outline:4px solid var(--straw);outline-offset:1px}
+.r{background:#fff;border:3px dashed var(--lilac);border-radius:12px;padding:10px;margin-top:10px;font:500 16px/1.7 'Baloo Bhaijaan 2'}
+.ph{background:#fff;border:3px solid var(--ink);border-radius:6px;padding:8px 8px 6px;transform:rotate(-2deg);text-align:center;margin:10px 18px;box-shadow:3px 3px 0 var(--ink)}
+.ph img{width:100%;image-rendering:pixelated;border:2px solid var(--ink);display:block}
+.ph b{font:800 20px 'Baloo Bhaijaan 2'}
+</style></head><body>
+<div id="cover">
+ <span class="fl" style="top:10%;left:12%">✦</span><span class="fl" style="top:18%;right:14%;animation-delay:1s">📸</span><span class="fl" style="bottom:16%;left:18%;animation-delay:2s">💗</span><span class="fl" style="bottom:22%;right:12%;animation-delay:3s">⭐</span>
+ <div class="tag">photo booth ✧ بوث الذكريات</div>
+ <h1>Wishnook</h1><h2>ركن الأمنيات</h2>
+ <p>📸 تصويرة صغيرة لكِ · A tiny memory for you</p>
+ <button class="b" id="enter" style="font-size:20px;padding:8px 26px">ادخلي البوث · Enter ✦</button>
+</div>
+<div id="win">
+ <div id="bar"><span>Wishnook ✦ @wishnook1</span><span id="hud">📸</span></div>
+ <canvas id="c" width="120" height="160"></canvas>
+ <div id="btns"></div>
+ <div id="msg">…</div>
+ <div id="dlg" hidden></div>
+</div>
+<script>
+const BRAND="Wishnook";
+// art/artBy: ضعي هنا رسمة مرخّصة لك (رابط صورة) واسم صاحبتها
+const CFG={to:"غلا",from:"شهد",handle:"@wishnook1",art:"",artBy:"",sig:"c150ef18",
+ msg:"أحلى صورة هي اللي تجمعنا. كل عام وأنتِ أقرب صديقة · Best friends forever 💗"};
+const H=s=>{let h=5381;for(const c of s)h=((h<<5)+h+c.charCodeAt(0))>>>0;return h.toString(16)};
+const lic=()=>H(BRAND+"|"+CFG.to)===CFG.sig&&document.title.includes(BRAND);
+const $=i=>document.getElementById(i),C=$("c"),X=C.getContext("2d");
+document.addEventListener("contextmenu",e=>e.preventDefault());
+let A;const beep=(f=520,d=.06,ty="square")=>{try{A=A||new AudioContext();const o=A.createOscillator(),g=A.createGain();o.type=ty;o.frequency.value=f;g.gain.value=.04;o.connect(g);g.connect(A.destination);o.start();o.stop(A.currentTime+d)}catch(e){}};
+const INK="#43355f",FR=["#ff8fb1","#c9b6f2","#a9d8ff","#bdebd3","#ffe9a8"];
+const rc=(c,x,y,w,h)=>{X.fillStyle=c;X.fillRect(Math.round(x),Math.round(y),w,h)};
+const ell=(cx,cy,rx,ry,c)=>{cx=Math.round(cx);cy=Math.round(cy);for(let d=-Math.round(ry);d<=ry;d++){const w=Math.floor(rx*Math.sqrt(Math.max(0,1-d*d/(ry*ry))));rc(c,cx-w,cy+d,2*w+1,1)}};
+const px=(rows,c,x,y)=>rows.forEach((r,j)=>[...r].forEach((h,i)=>{if(h==="a")rc(c,x+i,y+j,1,1)}));
+const ST=[{e:"💗",f:(x,y)=>px([".a.a.","aaaaa",".aaa.","..a.."],"#ff6f9b",x-2,y-2)},{e:"⭐",f:(x,y)=>px(["..a..","..a..","aaaaa",".aaa.","aa.aa"],"#ffb02e",x-2,y-2)},{e:"🌸",f:(x,y)=>{[[0,-3],[0,3],[-3,0],[3,0]].forEach(([a,b])=>ell(x+a,y+b,2,2,"#ffb3c9"));rc("#ffe9a8",x-1,y-1,2,2)}},{e:"🎀",f:(x,y)=>{rc("#ff8fb1",x-4,y-2,4,4);rc("#ff8fb1",x+1,y-2,4,4);rc(INK,x-1,y-1,2,2)}},{e:"✨",f:(x,y)=>{rc("#fff",x,y-3,1,7);rc("#fff",x-3,y,7,1);rc("#ffe9a8",x-1,y-1,3,3)}}];
+let S=0,fr=0,sel=-1,pose=[0,0],stamps=[],cd=0,flash=0,snap=false,img="",t=0;
+const say=s=>$("msg").textContent=s;
+function dlg(t,h){const d=$("dlg");d.innerHTML=`<div class=pill>${t}</div>${h}`;d.hidden=false;d.scrollTop=0}
+function cl(){$("dlg").hidden=true;beep(330)}
+const pf=i=>{fr=i;menu()};
+function menu(){S=0;$("btns").innerHTML="";dlg("📸 بوث الذكريات",`<p>أهلًا ${CFG.to}! هذا بوث تصوير صغير لك ولصديقتك. اختاري لون الإطار · Pick a frame:</p>${FR.map((c,i)=>`<button class="b f${i===fr?" s":""}" style="background:${c}" onclick="pf(${i})"></button>`).join("")}<br><button class=b onclick="start()">ابدئي · Start ✦</button>`)}
+function start(){cl();S=1;stamps=[];pose=[0,0];sel=-1;
+ $("btns").innerHTML=ST.map((s,i)=>`<button class="b" id="s${i}" onclick="pick(${i})">${s.e}</button>`).join("")+`<button class="b" style="background:var(--sky)" onclick="shot()">📸 صوّري</button>`;
+ say("اختاري ستيكر والمسي الشاشة تلصقينه · أو المسي الشخصية لتغيير الحركة ✿")}
+function pick(i){sel=sel===i?-1:i;ST.forEach((_,j)=>$("s"+j).classList.toggle("s",j===sel));beep(600,.04)}
+function shot(){if(S!==1)return;S=2;cd=3;$("btns").innerHTML="";say("ابتسمي! Smile 😊");beep(500,.1);const iv=setInterval(()=>{cd--;if(cd>0)beep(500,.1);else{clearInterval(iv);snap=true;beep(1000,.25,"triangle")}},750)}
+function fin(){
+ if(!lic()){dlg("تنبيه","<p>نسخة معدّلة بدون ترخيص. للتعديل تواصلي مع <b>ركن الأمنيات · Wishnook</b> "+CFG.handle+"</p>");return}
+ dlg("📸 صورتكم جاهزة",`<div class=ph><img src="${img}" alt=""><b>${CFG.to} ✦ ${CFG.from}</b></div><div class=r>${CFG.msg}<br>— من ${CFG.from} ♡</div>${CFG.art?`<p style="text-align:center"><img src="${CFG.art}" style="max-width:60%"><br>Art by ${CFG.artBy}</p>`:""}<p style="text-align:center"><b>Wishnook · ركن الأمنيات</b><br>${CFG.handle}</p><p style="text-align:center;font-size:13px">خذي سكرين شوت للصورة 📱</p><button class=b onclick="cl()">يا حلوها 💗</button><button class=b style="background:var(--sky)" onclick="menu()">صورة جديدة · Again</button>`)}
+$("enter").onclick=()=>{$("cover").classList.add("out");beep(660,.15,"triangle");menu()};
+C.addEventListener("pointerdown",e=>{if(S!==1)return;const r=C.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*120,y=(e.clientY-r.top)/r.height*160;
+ if(sel>=0&&y>16&&y<144&&x>8&&x<112){if(stamps.length<24)stamps.push({x,y,k:sel});beep(800+sel*100,.05,"triangle");return}
+ [40,80].forEach((cx,i)=>{if(Math.abs(x-cx)<18&&y>60&&y<125){pose[i]=(pose[i]+1)%3;beep(700,.06,"triangle")}})});
+function chr(cx,cy,k,p){
+ const b=Math.sin(t/12+k)*1.2,y=cy+b,outf=k?"#ffe9a8":"#c9b6f2",skin="#ffe3d0",hair=k?"#e8a58a":"#3a2a4a";
+ ell(cx,y+25,13,11,INK);ell(cx,y+25,12,10,outf);rc("#fff8f0",cx-3,y+15,7,3);
+ if(p===1){const hx=cx+(k?-21:21);ell(hx,y+8,5,5,INK);ell(hx,y+8,4,4,skin);rc(INK,hx-3,y-5,3,9);rc(INK,hx+1,y-5,3,9);rc(skin,hx-2,y-4,1,8);rc(skin,hx+2,y-4,1,8)}
+ ell(cx,y+2,17,15,INK);if(k){ell(cx-16,y-10,6,6,INK);ell(cx+16,y-10,6,6,INK)}
+ ell(cx,y+1,16,14,hair);if(k){ell(cx-16,y-10,5,5,hair);ell(cx+16,y-10,5,5,hair);rc("#ff8fb1",cx-17,y-12,3,3);rc("#ff8fb1",cx+15,y-12,3,3)}
+ ell(cx,y+3,13,12,skin);
+ ell(cx,y-8,15,6,INK);ell(cx,y-8,14,5,hair);
+ for(let i=-12;i<=12;i+=4)rc(hair,cx+i,y-6,3,4+(Math.abs(i)%8?1:0));
+ if(!k){rc("#ffe9a8",cx+13,y+4,2,2)}
+ const bl=t%170<7&&p===0;
+ [-6,6].forEach((o,i)=>{const x=cx+o;
+  if(p===2||bl||(p===1&&i===1)){rc(INK,x-2,y+3,1,1);rc(INK,x-1,y+2,2,1);rc(INK,x+1,y+3,1,1)}
+  else{rc(INK,x-1,y,3,5);rc("#fff",x-1,y,1,2);rc("#8b6be8",x,y+3,1,2)}});
+ rc("#ffb3c9",cx-11,y+6,4,2);rc("#ffb3c9",cx+8,y+6,4,2);
+ if(p===2){ell(cx,y+9,2,2,INK);rc("#ff8fb1",cx-1,y+10,3,1)}else{rc(INK,cx-2,y+8,1,1);rc(INK,cx-1,y+9,3,1);rc(INK,cx+2,y+8,1,1)}
+ if(p===2)px([".a.a.","aaaaa",".aaa.","..a.."],"#ff8fb1",cx+(k?-22:18),y-14+Math.sin(t/6)*2)}
+function loop(){t++;
+ rc("#ffd6e3",0,0,120,160);for(let y=0;y<160;y+=12)for(let x=(y%24?0:6);x<120;x+=12)px(["..a..",".aaa.","..a.."],"#fff8f0",x,y);
+ for(let x=0;x<120;x+=10){rc("#c9b6f2",x,0,5,22);ell(x+2,22,3,2,"#c9b6f2")}
+ rc("#fff8f0",0,128,120,32);for(let x=0;x<120;x+=8)rc("#ff8fb1",x,134,4,1);
+ chr(40,84,0,pose[0]);chr(80,84,1,pose[1]);
+ stamps.forEach(s=>ST[s.k].f(Math.round(s.x),Math.round(s.y)));
+ rc(FR[fr],0,0,120,5);rc(FR[fr],0,155,120,5);rc(FR[fr],0,0,5,160);rc(FR[fr],115,0,5,160);rc(INK,5,5,110,1);rc(INK,5,154,110,1);rc(INK,5,5,1,150);rc(INK,114,5,1,150);rc(INK,0,0,120,1);rc(INK,0,159,120,1);
+ [[8,8],[106,8],[8,148],[106,148]].forEach(([x,y])=>px([".a.a.","aaaaa",".aaa.","..a.."],"#fff",x,y));
+ X.font="6px monospace";X.fillStyle=INK;X.fillText("WISHNOOK "+CFG.handle,22,152);
+ if(!lic()){rc("#e0505a",0,0,120,9);X.fillStyle="#fff";X.fillText("UNLICENSED COPY",3,7)}
+ if(snap){snap=false;img=C.toDataURL();flash=16;setTimeout(()=>{S=3;fin()},900)}
+ if(S===2&&cd>0){X.font="40px DotGothic16,monospace";X.fillStyle="#fff";X.strokeStyle=INK;X.lineWidth=2;X.strokeText(cd,50,95);X.fillText(cd,50,95)}
+ if(flash>0){X.globalAlpha=flash/16;rc("#fff",0,0,120,160);X.globalAlpha=1;flash--}
+ requestAnimationFrame(loop)}
+loop();
+</script></body></html>
